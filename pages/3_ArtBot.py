@@ -14,9 +14,12 @@
 import streamlit as st
 from pydantic_ai import Agent
 from google import genai
+from pydantic_ai.models.google import GoogleModel
 
 st.title("Meet Artbot")
 st.subheader("Ask him anything about any questions you have regarding the Art Institure of Chicago!")
+model = GoogleModel("gemini-3.1-flash-lite")
+agent = Agent(model=model)
 agent = Agent(
     model="gemini-3.1-flash-lite",
     instructions=(
