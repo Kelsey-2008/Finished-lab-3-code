@@ -11,22 +11,21 @@
 #
 # Your Gemini API key goes in .streamlit/secrets.toml as GOOGLE_API_KEY.
 
+import os
 import streamlit as st
 from pydantic_ai import Agent
 from google import genai
-from pydantic_ai.models.google import GoogleModel
+
+os.environ["GOOGLE_API_KEY"] = st.secrets["GOOGLE_API_KEY"]
 
 st.title("Meet Artbot")
 st.subheader("Ask him anything about any questions you have regarding the Art Institure of Chicago!")
-model = GoogleModel("gemini-3.1-flash-lite")
-agent = Agent(model=model)
 agent = Agent(
-    model="gemini-3.1-flash-lite",
+    "google:gemini-3.1-flash-lite",
     instructions=(
-        "You are a friendly assistant for The Art Institute of Chicago. "
-        "Only talk about The Art Institute of Chicago. "
-        "The classification titles you should know about are: "
-        "oil on canvas, oil on panel, painting, palladium print."
+        "You are a friendly assistant for <The Art Institute of Chicago>. "
+        "Only talk about The Art Institute of Chicago",
+        "The classification titles you should know about are 'oil on canvas', 'oil on panel', 'painting', 'palladium print'." 
     ),
 )
 
@@ -70,3 +69,4 @@ if prompt:
         print("Something went wrong")
         print(e)
                         
+
