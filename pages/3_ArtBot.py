@@ -21,7 +21,7 @@ os.environ["GOOGLE_API_KEY"] = st.secrets["GOOGLE_API_KEY"]
 st.title("Meet Artbot")
 st.subheader("Ask him anything about any questions you have regarding the Art Institure of Chicago!")
 agent = Agent(
-    "google:gemini-3.1-flash-lite",
+    "google:gemini-3.5-flash-lite",
     instructions=(
         "You are a friendly assistant for <The Art Institute of Chicago>. "
         "Only talk about The Art Institute of Chicago",
@@ -30,8 +30,8 @@ agent = Agent(
 )
 
 
-gemini_key = "AQ.Ab8RN6J1HdM_ITHvyp5unXEW9Juww4q2rEmmAdRd4BbBSXO40A"
-genai.Client(api_key=gemini_key)
+## gemini_key = "AQ.Ab8RN6J1HdM_ITHvyp5unXEW9Juww4q2rEmmAdRd4BbBSXO40A"
+## genai.Client(api_key=gemini_key)
 
 from pydantic_ai.models.fallback import FallbackModel
 
