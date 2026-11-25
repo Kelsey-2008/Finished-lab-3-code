@@ -18,11 +18,12 @@ from google import genai
 st.title("Meet Artbot")
 st.subheader("Ask him anything about any questions you have regarding the Art Institure of Chicago!")
 agent = Agent(
-    "google:gemini-3.1-flash-lite",
+    model="gemini-3.1-flash-lite",
     instructions=(
-        "You are a friendly assistant for <The Art Institute of Chicago>. "
-        "Only talk about The Art Institute of Chicago",
-        "The classification titles you should know about are 'oil on canvas', 'oil on panel', 'painting', 'palladium print'." 
+        "You are a friendly assistant for The Art Institute of Chicago. "
+        "Only talk about The Art Institute of Chicago. "
+        "The classification titles you should know about are: "
+        "oil on canvas, oil on panel, painting, palladium print."
     ),
 )
 
