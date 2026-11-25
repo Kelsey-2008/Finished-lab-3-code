@@ -27,7 +27,7 @@ agent = Agent(
 )
 
 
-GOOGLE_API_KEY = "AQ.Ab8RN6J1HdM_ITHvyp5unXEW9Juww4q2rEmmAdRd4BbBSXO40A"
+gemini_key = "AQ.Ab8RN6J1HdM_ITHvyp5unXEW9Juww4q2rEmmAdRd4BbBSXO40A"
 genai.Client(api_key=gemini_key)
 
 from pydantic_ai.models.fallback import FallbackModel
